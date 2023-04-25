@@ -25,5 +25,6 @@ namespace AtelieDrinks.Models
         [Column("custo_garrafa")]
         [Display(Name = "Custo da garrafa")]
         public decimal custo_garrafa { get; set; }
+
     }
 }
