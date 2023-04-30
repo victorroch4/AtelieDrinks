@@ -1,55 +1,99 @@
 ﻿@{
-    ViewData["Title"] = "Pagina Home";
-}
+    ViewData["Title"] = "Home Page";
 
-<style>
-    .search-box{
-        position:absolute;
-        background: #0a1b2d;
-        height:40px;
-        padding:10px;
-        border-radius:40px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-    }
+    <link href="css/stylecards.css" rel="stylesheet">
+    <link href="js/scriptdashboard.js">
 
-    .search-txt{
-        border:none;
-        background:none;
-        outline:none;
-        padding:0;
-        color:#f0f5fb;
-        font-size:16px;
-        line-height:40px;
-        
 
-    }
+    <img height="px" width="100%" src="/imagens/selection-various-cocktails-table 1.png" class="imageuser" alt="">
 
-    .search-btn{
-        width:40px;
-        height:40px;
-        border-radius: 50%;
-        background: #0a1b2d;
-        display:flex;
-        justify-content:center;
-        align-items: center;
-    }/**/
+    <div style="margin-top:-450px;">
 
-</style>
+        <h1 style="padding-top:150px; color:#fff" class="text-center">DASHBOARD</h1>
+        <a style="text-decoration: none" href="Orcamento">
+            <div class="cardorcamento">
 
-<body>
-    <div class="text-center">
-    <h1 class="display-4">Seja bem-vindo 2</h1>
-    <p>Este é um appaaspasa dedicado a empresa Ateliê Drinks.</p>
-</div>
+                <div class="cardorcamento_image">
 
-<div class="search-box">
-                <input type="text" class="search-txt" placeholder="Pesquisar">
-                <a href="#" class="search-btn">
-                    <img src="~/images/lupa.svg" alt="lupa" height="20px" width="20px">
-                </a>
-                
+                    <img src="/imagens/atelier.jpg" />
+
+                </div>
+                <div class="cardorcamento_title title-black">
+                    <p>ORÇAMENTO</p>
+                </div>
+                <div class="cardorcamento_title title">
+                    <p>FAÇA O SEU</p>
+                </div>
+                <div class="cardorcamento_title title-black" style="font-size:100px; margin-top:-50px; margin-right: 300px;">
+                    <p>+</p>
+                </div>
             </div>
 
-</body>
+        </a>
+
+    </div>
+
+    <img />
+
+    <div class="cards-list">
+
+        <div class="card 4">
+
+
+            <div class="card_title title">
+                <p>penúltimo</p>
+
+            </div><div class="card_title title-white">
+                <p>ORÇAMENTO</p>
+            </div>
+
+            <div class="card_title title">
+                <p>R$ 3.452,00 </p>
+            </div>
+
+        </div>
+
+        <div class="card 1">
+
+            <div class="card_title title">
+                <p>último</p>
+            </div>
+
+            <div class="card_title title-white">
+                <p>ORÇAMENTO</p>
+            </div>
+
+
+            <div class="card_title title">
+                <p>R$ 4.521,00</p>
+            </div>
+
+
+
+        </div>
+
+        <div class="card 3">
+            <a style="text-decoration: none" href="Historico">
+                <div class="card_title">
+                    <p>
+
+                    </p>
+                </div>
+                <div class="card_title title-white">
+                    <p>
+                        HISTÓRICO
+                    </p>
+                </div>
+        </div>
+        <a>
+
+
+
+    </div>
+
+
+
+
+
+
+}

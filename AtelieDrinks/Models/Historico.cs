@@ -72,7 +72,7 @@ namespace AtelieDrinks.Models
 
         [Column("id_orcamento")]
         [Display(Name = "id_orcamento")]
-        public Orcamento id_orcamento { get; set; }
+        public Historico id_orcamento { get; set; }
 
     }
 }
