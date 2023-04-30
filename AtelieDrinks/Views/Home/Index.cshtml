@@ -1,8 +1,55 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Pagina Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Seja bem-vindo</h1>
-    <p>Este é um software dedicado a empresa Ateliê Drinks.</p>
+<style>
+    .search-box{
+        position:absolute;
+        background: #0a1b2d;
+        height:40px;
+        padding:10px;
+        border-radius:40px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .search-txt{
+        border:none;
+        background:none;
+        outline:none;
+        padding:0;
+        color:#f0f5fb;
+        font-size:16px;
+        line-height:40px;
+        
+
+    }
+
+    .search-btn{
+        width:40px;
+        height:40px;
+        border-radius: 50%;
+        background: #0a1b2d;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+    }/**/
+
+</style>
+
+<body>
+    <div class="text-center">
+    <h1 class="display-4">Seja bem-vindo 2</h1>
+    <p>Este é um appaaspasa dedicado a empresa Ateliê Drinks.</p>
 </div>
+
+<div class="search-box">
+                <input type="text" class="search-txt" placeholder="Pesquisar">
+                <a href="#" class="search-btn">
+                    <img src="~/images/lupa.svg" alt="lupa" height="20px" width="20px">
+                </a>
+                
+            </div>
+
+</body>
