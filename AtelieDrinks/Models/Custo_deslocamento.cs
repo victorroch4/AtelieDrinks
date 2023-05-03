@@ -6,6 +6,7 @@ namespace AtelieDrinks.Models
     [Table("Custo_deslocamento")]
     public class Custo_deslocamento
     {
+        [Key]
         [Column("id_taxa_deslocamento")]
         [Display(Name = "id_taxa_deslocamento")]
         public int id_taxa_deslocamento { get; set; }

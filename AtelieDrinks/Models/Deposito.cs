@@ -6,6 +6,7 @@ namespace AtelieDrinks.Models
     [Table("Deposito")]
     public class Deposito
     {
+        [Key]
         [Column("id_item")]
         [Display(Name = "id_item")]
         public int id_item { get; set; }

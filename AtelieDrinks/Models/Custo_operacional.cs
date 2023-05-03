@@ -6,6 +6,7 @@ namespace AtelieDrinks.Models
     [Table("Custo Operacional")]
     public class Custo_operacional
     {
+        [Key]
         [Column("id_custo_operacional")]
         [Display(Name = "id_custo_operacional")]
         public int id_custo_operacional { get; set; }

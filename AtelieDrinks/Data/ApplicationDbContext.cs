@@ -24,34 +24,34 @@ namespace AtelieDrinks.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Base_alcoolica>()
-                .HasNoKey();
+                .HasKey(d => d.id_base_alcoolica);
 
             modelBuilder.Entity<Custo_deslocamento>()
-                .HasNoKey();
+                .HasKey(d => d.id_taxa_deslocamento);
 
             modelBuilder.Entity<Custo_operacional>()
-                .HasNoKey();
+                .HasKey(d => d.id_custo_operacional);
 
             modelBuilder.Entity<Deposito>()
-                .HasNoKey();
+                .HasKey(d => d.id_item);
 
             modelBuilder.Entity<Drinks>()
-                .HasNoKey();
+                .HasKey(d => d.id_drink);
 
             modelBuilder.Entity<Ficha_tecnica>()
-                .HasNoKey();
+                .HasKey(d => d.id_ficha);
 
             modelBuilder.Entity<Historico>()
-                .HasNoKey();
+                .HasKey(d => d.id_historico);
 
             modelBuilder.Entity<Insumos>()
-                .HasNoKey();
+                .HasKey(d => d.id_insumo);
 
             modelBuilder.Entity<Marca>()
-                .HasNoKey();
+                .HasKey(d => d.id_marca);
 
             modelBuilder.Entity<Orcamento>()
-                .HasNoKey();
+                .HasKey(d => d.id_orcamento);
         }
     }
 }

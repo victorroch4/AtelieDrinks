@@ -6,6 +6,7 @@ namespace AtelieDrinks.Models
     [Table("Ficha Tecnica")]
     public class Ficha_tecnica
     {
+        [Key]
         [Column("id_ficha")]
         [Display(Name = "id_ficha")]
         public int id_ficha { get; set; }

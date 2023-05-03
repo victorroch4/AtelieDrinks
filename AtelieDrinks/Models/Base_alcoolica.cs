@@ -6,6 +6,7 @@ namespace AtelieDrinks.Models
     [Table("Base_alcoolica")]
     public class Base_alcoolica
     {
+        [Key]
         [Column("id_base_alcoolica")]
         [Display(Name = "id_base_alcoolica")]
         public int id_base_alcoolica { get; set; }
