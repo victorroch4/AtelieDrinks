@@ -24,7 +24,7 @@ namespace AtelieDrinks.Models
 
         [Column("id_item")]
         [Display(Name = "id_item")]
-        public Deposito id_item { get; set; }
+        public List<Deposito>? id_item { get; set; }
 
 
 

@@ -10,17 +10,16 @@ namespace AtelieDrinks.Data
         {
         }
 
-        public Microsoft.EntityFrameworkCore.DbSet<Base_alcoolica> Base_Alcoolica { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Custo_deslocamento> Custo_Deslocamento { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Custo_operacional> Custo_operacional { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Deposito> Deposito { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Drinks> Drinks { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Ficha_tecnica> Ficha_tecnica { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Historico> Historico { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Insumos> Insumos { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Marca> Marca { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Orcamento> Orcamento { get; set; }
-
+        public DbSet<Base_alcoolica> Base_Alcoolica { get; set; }
+        public DbSet<Custo_deslocamento> Custo_Deslocamento { get; set; }
+        public DbSet<Custo_operacional> Custo_operacional { get; set; }
+        public DbSet<Deposito> Deposito { get; set; }
+        public DbSet<Drinks> Drinks { get; set; }
+        public DbSet<Ficha_tecnica> Ficha_tecnica { get; set; }
+        public DbSet<Historico> Historico { get; set; }
+        public DbSet<Insumos> Insumos { get; set; }
+        public DbSet<Marca> Marca { get; set; }
+        public DbSet<Orcamento> Orcamento { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,6 +31,7 @@ namespace AtelieDrinks.Data
 
             modelBuilder.Entity<Custo_operacional>()
                 .HasNoKey();
+
             modelBuilder.Entity<Deposito>()
                 .HasNoKey();
 

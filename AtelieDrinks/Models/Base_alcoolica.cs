@@ -32,11 +32,11 @@ namespace AtelieDrinks.Models
 
         [Column("id_bebida")]
         [Display(Name = "id_bebida")]
-        public List<Marca> id_bebida { get; set; }
+        public List<Marca>? id_bebida { get; set; }
 
         [Column("id_marca")]
         [Display(Name = "id_marca")]
-        public Marca id_marca { get; set; }
+        public List<Marca>? id_marca { get; set; }
 
 
     /*id_base_alcoolica SERIAL NOT NULL PRIMARY KEY,

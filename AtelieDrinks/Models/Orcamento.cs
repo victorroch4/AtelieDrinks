@@ -72,7 +72,7 @@ namespace AtelieDrinks.Models
 
         [Column("id_insumo")]
         [Display(Name = "id_insumo")]
-        public Insumos id_insumo { get; set; }
+        public List<Insumos>? id_insumo { get; set; }
 
 
 

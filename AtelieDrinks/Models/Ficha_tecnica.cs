@@ -44,11 +44,11 @@ namespace AtelieDrinks.Models
 
         [Column("id_base_alcoolica")]
         [Display(Name = "id_base_alcoolica")]
-        public Base_alcoolica id_base_alcoolica { get; set; }
+        public List<Base_alcoolica>? id_base_alcoolica { get; set; }
 
         [Column("id_insumo")]
         [Display(Name = "id_insumo")]
-        public Insumos id_insumo { get; set; }
+        public List<Insumos>? id_insumo { get; set; }
 
 
         /*CREATE TABLE Ficha_tecnica(

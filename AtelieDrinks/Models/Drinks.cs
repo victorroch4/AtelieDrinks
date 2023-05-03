@@ -24,7 +24,7 @@ namespace AtelieDrinks.Models
 
         [Column("ingredientes")]
         [Display(Name = "Ingredientes")]
-        public string ingredientes { get; set; }
+        public string? ingredientes { get; set; }
 
     }
 }

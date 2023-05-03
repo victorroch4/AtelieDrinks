@@ -32,7 +32,7 @@ namespace AtelieDrinks.Models
 
         [Column("descricao_observacao")]
         [Display(Name = "Descricao")]
-        public string descricao_observacao { get; set; }
+        public string? descricao_observacao { get; set; }
 
 
         /* id_item SERIAL NOT NULL PRIMARY KEY,

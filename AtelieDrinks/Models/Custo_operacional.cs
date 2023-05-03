@@ -80,7 +80,7 @@ namespace AtelieDrinks.Models
 
         [Column("id_taxa_deslocamento")]
         [Display(Name = "id_taxa_deslocamento")]
-        public Custo_deslocamento id_taxa_deslocamento { get; set; }
+        public List<Custo_deslocamento>? id_taxa_deslocamento { get; set; }
 
 
         /*
