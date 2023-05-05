@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="@Url.Content("~/js/app.js")" defer></script>
+    <link href="@Url.Content("~/css/app.css")" rel="stylesheet">
 
     <title>Atelier Drinks</title>
 
@@ -19,11 +19,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="@Url.Content("~/css/sb-admin-2.css")" rel="stylesheet">
 
-    <link rel="icon" type="image/x-icon" href="{{asset('/imagens/logoad.png')}}">
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~/imagens/logoad.png")">
 
     <script src="https://kit.fontawesome.com/fd016a7d8f.js" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -45,7 +46,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
                 <div class="sidebar-brand-icon">
-                    <img height="50px" src="imagens/logoad.png" />
+                    <img height="50px" src="@Url.Content("~/imagens/logoad.png")" />
                 </div>
             </a>
             <!-- Divider -->
@@ -144,6 +145,7 @@
             <div id="content" style="background-color:black;">
 
                 @RenderBody()
+                @RenderSection("Scripts", required: false)
             </div>
             <!-- End of Main Content -->
             <!-- Footer -->
