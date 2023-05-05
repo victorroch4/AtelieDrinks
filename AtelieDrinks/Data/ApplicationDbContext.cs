@@ -52,6 +52,7 @@ namespace AtelieDrinks.Data
 
             modelBuilder.Entity<Orcamento>()
                 .HasKey(d => d.id_orcamento);
+
         }
     }
 }

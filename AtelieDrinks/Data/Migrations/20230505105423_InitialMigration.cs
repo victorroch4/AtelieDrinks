@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AtelieDrinks.Data.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,25 +31,11 @@ namespace AtelieDrinks.Data.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.CreateTable(
-                name: "Base_alcoolica",
-                columns: table => new
-                {
-                    id_base_alcoolica = table.Column<int>(type: "int", nullable: false),
-                    quantidade = table.Column<int>(type: "int", nullable: false),
-                    nome_bebida = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    nome_marca = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    custo_garrafa = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    custo_total = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Custo Operacional",
                 columns: table => new
                 {
-                    id_custo_operacional = table.Column<int>(type: "int", nullable: false),
+                    id_custo_operacional = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     qtd_coordenador = table.Column<int>(type: "int", nullable: false),
                     custo_coordenador = table.Column<int>(type: "int", nullable: false),
                     qtd_profissionais_gerais = table.Column<int>(type: "int", nullable: false),
@@ -70,42 +56,15 @@ namespace AtelieDrinks.Data.Migrations
                 },
                 constraints: table =>
                 {
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Custo_deslocamento",
-                columns: table => new
-                {
-                    id_taxa_deslocamento = table.Column<int>(type: "int", nullable: false),
-                    tipo_deslocamento = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    valor_tipo_deslocamento = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    custo_tipo_deslocamento = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Deposito",
-                columns: table => new
-                {
-                    id_item = table.Column<int>(type: "int", nullable: false),
-                    setor_armazenamento = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    nome_item = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    medida_de_armazenamento = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    quantidade = table.Column<int>(type: "int", nullable: false),
-                    custo_deposito = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    descricao_observacao = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
+                    table.PrimaryKey("PK_Custo Operacional", x => x.id_custo_operacional);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Drinks",
                 columns: table => new
                 {
-                    id_drink = table.Column<int>(type: "int", nullable: false),
+                    id_drink = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     nome_drink = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     custo_tecnico = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     quantidade = table.Column<int>(type: "int", nullable: false),
@@ -113,13 +72,15 @@ namespace AtelieDrinks.Data.Migrations
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_Drinks", x => x.id_drink);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Ficha Tecnica",
                 columns: table => new
                 {
-                    id_ficha = table.Column<int>(type: "int", nullable: false),
+                    id_ficha = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     nome_drink = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     nome_base_alcoolica = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     nome_insumo = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -131,13 +92,15 @@ namespace AtelieDrinks.Data.Migrations
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_Ficha Tecnica", x => x.id_ficha);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Historico",
                 columns: table => new
                 {
-                    id_historico = table.Column<int>(type: "int", nullable: false),
+                    id_historico = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     numero_pessoas = table.Column<int>(type: "int", nullable: false),
                     custo_operacional = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     custo_total_insumos = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -152,44 +115,25 @@ namespace AtelieDrinks.Data.Migrations
                     valor_orcamento = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     previsao_lucro = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     qtde_convidados = table.Column<int>(type: "int", nullable: false),
-                    qtde_drinks = table.Column<int>(type: "int", nullable: false)
+                    qtde_drinks = table.Column<int>(type: "int", nullable: false),
+                    Historicoid_historico = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Insumos",
-                columns: table => new
-                {
-                    id_insumo = table.Column<int>(type: "int", nullable: false),
-                    nome_insumo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    quantidade = table.Column<int>(type: "int", nullable: false),
-                    custo_insumo = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Marca",
-                columns: table => new
-                {
-                    id_marca = table.Column<int>(type: "int", nullable: false),
-                    id_bebida = table.Column<int>(type: "int", nullable: false),
-                    nome_marca = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    nome_bebida = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    custo_garrafa = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
+                    table.PrimaryKey("PK_Historico", x => x.id_historico);
+                    table.ForeignKey(
+                        name: "FK_Historico_Historico_Historicoid_historico",
+                        column: x => x.Historicoid_historico,
+                        principalTable: "Historico",
+                        principalColumn: "id_historico");
                 });
 
             migrationBuilder.CreateTable(
                 name: "Orcamento",
                 columns: table => new
                 {
-                    id_orcamento = table.Column<int>(type: "int", nullable: false),
+                    id_orcamento = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     numero_pessoas = table.Column<int>(type: "int", nullable: false),
                     custo_operacional = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     custo_total_insumos = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -208,17 +152,175 @@ namespace AtelieDrinks.Data.Migrations
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_Orcamento", x => x.id_orcamento);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Custo_deslocamento",
+                columns: table => new
+                {
+                    id_taxa_deslocamento = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    tipo_deslocamento = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    valor_tipo_deslocamento = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    custo_tipo_deslocamento = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Custo_operacionalid_custo_operacional = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Custo_deslocamento", x => x.id_taxa_deslocamento);
+                    table.ForeignKey(
+                        name: "FK_Custo_deslocamento_Custo Operacional_Custo_operacionalid_custo_operacional",
+                        column: x => x.Custo_operacionalid_custo_operacional,
+                        principalTable: "Custo Operacional",
+                        principalColumn: "id_custo_operacional");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Base_alcoolica",
+                columns: table => new
+                {
+                    id_base_alcoolica = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    quantidade = table.Column<int>(type: "int", nullable: false),
+                    nome_bebida = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    nome_marca = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    custo_garrafa = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    custo_total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Ficha_tecnicaid_ficha = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Base_alcoolica", x => x.id_base_alcoolica);
+                    table.ForeignKey(
+                        name: "FK_Base_alcoolica_Ficha Tecnica_Ficha_tecnicaid_ficha",
+                        column: x => x.Ficha_tecnicaid_ficha,
+                        principalTable: "Ficha Tecnica",
+                        principalColumn: "id_ficha");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Insumos",
+                columns: table => new
+                {
+                    id_insumo = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    nome_insumo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    quantidade = table.Column<int>(type: "int", nullable: false),
+                    custo_insumo = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Ficha_tecnicaid_ficha = table.Column<int>(type: "int", nullable: true),
+                    Orcamentoid_orcamento = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Insumos", x => x.id_insumo);
+                    table.ForeignKey(
+                        name: "FK_Insumos_Ficha Tecnica_Ficha_tecnicaid_ficha",
+                        column: x => x.Ficha_tecnicaid_ficha,
+                        principalTable: "Ficha Tecnica",
+                        principalColumn: "id_ficha");
+                    table.ForeignKey(
+                        name: "FK_Insumos_Orcamento_Orcamentoid_orcamento",
+                        column: x => x.Orcamentoid_orcamento,
+                        principalTable: "Orcamento",
+                        principalColumn: "id_orcamento");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Marca",
+                columns: table => new
+                {
+                    id_marca = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    id_bebida = table.Column<int>(type: "int", nullable: false),
+                    nome_marca = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    nome_bebida = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    custo_garrafa = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Base_alcoolicaid_base_alcoolica = table.Column<int>(type: "int", nullable: true),
+                    Base_alcoolicaid_base_alcoolica1 = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Marca", x => x.id_marca);
+                    table.ForeignKey(
+                        name: "FK_Marca_Base_alcoolica_Base_alcoolicaid_base_alcoolica",
+                        column: x => x.Base_alcoolicaid_base_alcoolica,
+                        principalTable: "Base_alcoolica",
+                        principalColumn: "id_base_alcoolica");
+                    table.ForeignKey(
+                        name: "FK_Marca_Base_alcoolica_Base_alcoolicaid_base_alcoolica1",
+                        column: x => x.Base_alcoolicaid_base_alcoolica1,
+                        principalTable: "Base_alcoolica",
+                        principalColumn: "id_base_alcoolica");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Deposito",
+                columns: table => new
+                {
+                    id_item = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    setor_armazenamento = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    nome_item = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    medida_de_armazenamento = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    quantidade = table.Column<int>(type: "int", nullable: false),
+                    custo_deposito = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    descricao_observacao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Insumosid_insumo = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Deposito", x => x.id_item);
+                    table.ForeignKey(
+                        name: "FK_Deposito_Insumos_Insumosid_insumo",
+                        column: x => x.Insumosid_insumo,
+                        principalTable: "Insumos",
+                        principalColumn: "id_insumo");
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Base_alcoolica_Ficha_tecnicaid_ficha",
+                table: "Base_alcoolica",
+                column: "Ficha_tecnicaid_ficha");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Custo_deslocamento_Custo_operacionalid_custo_operacional",
+                table: "Custo_deslocamento",
+                column: "Custo_operacionalid_custo_operacional");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Deposito_Insumosid_insumo",
+                table: "Deposito",
+                column: "Insumosid_insumo");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Historico_Historicoid_historico",
+                table: "Historico",
+                column: "Historicoid_historico");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Insumos_Ficha_tecnicaid_ficha",
+                table: "Insumos",
+                column: "Ficha_tecnicaid_ficha");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Insumos_Orcamentoid_orcamento",
+                table: "Insumos",
+                column: "Orcamentoid_orcamento");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Marca_Base_alcoolicaid_base_alcoolica",
+                table: "Marca",
+                column: "Base_alcoolicaid_base_alcoolica");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Marca_Base_alcoolicaid_base_alcoolica1",
+                table: "Marca",
+                column: "Base_alcoolicaid_base_alcoolica1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Base_alcoolica");
-
-            migrationBuilder.DropTable(
-                name: "Custo Operacional");
-
             migrationBuilder.DropTable(
                 name: "Custo_deslocamento");
 
@@ -229,19 +331,25 @@ namespace AtelieDrinks.Data.Migrations
                 name: "Drinks");
 
             migrationBuilder.DropTable(
-                name: "Ficha Tecnica");
-
-            migrationBuilder.DropTable(
                 name: "Historico");
-
-            migrationBuilder.DropTable(
-                name: "Insumos");
 
             migrationBuilder.DropTable(
                 name: "Marca");
 
             migrationBuilder.DropTable(
+                name: "Custo Operacional");
+
+            migrationBuilder.DropTable(
+                name: "Insumos");
+
+            migrationBuilder.DropTable(
+                name: "Base_alcoolica");
+
+            migrationBuilder.DropTable(
                 name: "Orcamento");
+
+            migrationBuilder.DropTable(
+                name: "Ficha Tecnica");
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
