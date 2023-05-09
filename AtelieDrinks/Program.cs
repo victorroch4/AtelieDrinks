@@ -13,8 +13,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<Contexto>();
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<Contexto>
-    (options => options.UseSqlServer("Server=localhost;Port=5432;User Id=postgres;Password=102030;Database=aspnet-AtelieDrinks-996cb1f4-7138-48bc-b3b0-95820039dd14;"));
+builder.Services.AddEntityFrameworkNpgsql()
+    .AddDbContext<Contexto>(options => 
+    options.UseNpgsql("Host=localhost;Port=5432;Pooling=true;Database=ATELIEDRINKS;User Id=postgres;Password=123456789;"));
 
 var app = builder.Build();
 

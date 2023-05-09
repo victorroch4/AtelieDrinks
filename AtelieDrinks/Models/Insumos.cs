@@ -26,18 +26,5 @@ namespace AtelieDrinks.Models
         [Column("id_item")]
         [Display(Name = "id_item")]
         public List<Deposito>? id_item { get; set; }
-
-
-
-        /*id_insumo SERIAL NOT NULL PRIMARY KEY,
-    nome_insumo VARCHAR(30) NOT NULL,
-    quantidade INTEGER NOT NULL,
-    custo_insumo NUMERIC NOT NULL,
-    id_item INTEGER NOT NULL, 
-    
-    FOREIGN KEY(id_item) REFERENCES Deposito(id_item)  */
-
-
-
     }
 }

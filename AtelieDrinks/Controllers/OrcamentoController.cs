@@ -12,9 +12,9 @@ namespace AtelieDrinks.Controllers
 {
     public class OrcamentoController : Controller
     {
-        private readonly Contexto _context;
+        private readonly Data.Contexto _context;
 
-        public OrcamentoController(Contexto context)
+        public OrcamentoController(Data.Contexto context)
         {
             _context = context;
         }

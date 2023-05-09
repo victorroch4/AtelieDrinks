@@ -75,30 +75,5 @@ namespace AtelieDrinks.Models
         [Display(Name = "id_insumo")]
         public List<Insumos>? id_insumo { get; set; }
 
-
-
-        /*id_orcamento SERIAL NOT NULL PRIMARY KEY,
-    numero_pessoas INTEGER NOT NULL,
-    custo_operacional INTEGER NOT NULL,
-    custo_total_insumos NUMERIC NOT NULL,
-    custo_total NUMERIC NOT NULL,
-    base_orcamento NUMERIC NOT NULL,
-    comissao_comercial NUMERIC NOT NULL,
-    comissao_gerencia NUMERIC NOT NULL,
-    valor_primario NUMERIC NOT NULL,
-    custo_por_pessoa NUMERIC NOT NULL,
-    valor_arredondado_pra_cima NUMERIC NOT NULL,
-    margem_negociacao NUMERIC NOT NULL,
-    valor_orcamento NUMERIC NOT NULL,
-    previsao_lucro NUMERIC NOT NULL,
-    qtde_convidados INTEGER NOT NULL,
-    qtde_drinks INTEGER NOT NULL,
-    id_insumo INTEGER NOT NULL,
-    
-    FOREIGN KEY(id_insumo) REFERENCES Insumos(id_insumo),
-    FOREIGN KEY(custo_operacional) REFERENCES Custo_operacional(id_custo_operacional)  */
-
-
-
     }
 }

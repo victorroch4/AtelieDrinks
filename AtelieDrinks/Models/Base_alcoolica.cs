@@ -33,24 +33,10 @@ namespace AtelieDrinks.Models
 
         [Column("id_bebida")]
         [Display(Name = "id_bebida")]
-        public List<Marca>? id_bebida { get; set; }
+        public Marca? id_bebida { get; set; }
 
         [Column("id_marca")]
         [Display(Name = "id_marca")]
-        public List<Marca>? id_marca { get; set; }
-
-
-    /*id_base_alcoolica SERIAL NOT NULL PRIMARY KEY,
-    quantidade INTEGER,
-    nome_bebida VARCHAR(30) NOT NULL,
-    nome_marca VARCHAR(30) NOT NULL,
-    custo_garrafa NUMERIC NOT NULL,
-    custo_total NUMERIC NOT NULL,
-    id_bebida INTEGER NOT NULL,
-    id_marca INTEGER NOT NULL,
-
-    FOREIGN KEY(id_bebida) REFERENCES Drinks(id_drink),
-    FOREIGN KEY(id_marca) REFERENCES Marca(id_marca)*/
-
+        public Marca? id_marca { get; set; }
     }
 }

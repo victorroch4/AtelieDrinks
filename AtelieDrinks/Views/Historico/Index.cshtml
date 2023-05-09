@@ -1,0 +1,119 @@
+﻿@model IEnumerable<AtelieDrinks.Models.Historico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.numero_pessoas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.custo_operacional)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.custo_total_insumos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.custo_total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.base_orcamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.comissao_comercial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.comissao_gerencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valor_primario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.custo_por_pessoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valor_arredondado_pra_cima)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.margem_negociacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valor_orcamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.previsao_lucro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qtde_convidados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qtde_drinks)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.numero_pessoas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.custo_operacional)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.custo_total_insumos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.custo_total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.base_orcamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comissao_comercial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comissao_gerencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valor_primario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.custo_por_pessoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valor_arredondado_pra_cima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.margem_negociacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valor_orcamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.previsao_lucro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qtde_convidados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qtde_drinks)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_historico">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_historico">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_historico">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

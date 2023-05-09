@@ -17,606 +17,262 @@ namespace AtelieDrinks.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.15")
+                .HasAnnotation("ProductVersion", "3.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AtelieDrinks.Models.Base_alcoolica", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
-                    b.Property<int>("id_base_alcoolica")
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_base_alcoolica");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_base_alcoolica"), 1L, 1);
-
-                    b.Property<int?>("Ficha_tecnicaid_ficha")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("custo_garrafa")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_garrafa");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("custo_total")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_total");
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nome_bebida")
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nome_bebida");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("nome_marca")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nome_marca");
+                    b.HasKey("Id");
 
-                    b.Property<int>("quantidade")
-                        .HasColumnType("int")
-                        .HasColumnName("quantidade");
+                    b.HasIndex("RoleId");
 
-                    b.HasKey("id_base_alcoolica");
-
-                    b.HasIndex("Ficha_tecnicaid_ficha");
-
-                    b.ToTable("Base_alcoolica");
+                    b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
-            modelBuilder.Entity("AtelieDrinks.Models.Custo_deslocamento", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
                 {
-                    b.Property<int>("id_taxa_deslocamento")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_taxa_deslocamento");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_taxa_deslocamento"), 1L, 1);
-
-                    b.Property<int?>("Custo_operacionalid_custo_operacional")
+                    b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("custo_tipo_deslocamento")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_tipo_deslocamento");
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("tipo_deslocamento")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("tipo_deslocamento");
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
-                    b.Property<decimal>("valor_tipo_deslocamento")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("valor_tipo_deslocamento");
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
 
-                    b.HasKey("id_taxa_deslocamento");
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
 
-                    b.HasIndex("Custo_operacionalid_custo_operacional");
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
 
-                    b.ToTable("Custo_deslocamento");
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("AtelieDrinks.Models.Custo_operacional", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.Property<int>("id_custo_operacional")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_custo_operacional");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_custo_operacional"), 1L, 1);
-
-                    b.Property<int>("custo_balcoes")
-                        .HasColumnType("int")
-                        .HasColumnName("custo_balcoes");
-
-                    b.Property<int>("custo_coordenador")
-                        .HasColumnType("int")
-                        .HasColumnName("custo_coordenador");
-
-                    b.Property<int>("custo_impostos_federais")
-                        .HasColumnType("int")
-                        .HasColumnName("custo_impostos_federais");
-
-                    b.Property<int>("custo_operacional")
-                        .HasColumnType("int")
-                        .HasColumnName("custo_operacional");
-
-                    b.Property<decimal>("custo_profissionais_gerais")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_profissionais_gerais ");
-
-                    b.Property<int>("custo_seguro_reserva")
-                        .HasColumnType("int")
-                        .HasColumnName("custo_seguro_reserva");
-
-                    b.Property<int>("custo_taxa_deslocamento")
-                        .HasColumnType("int")
-                        .HasColumnName("custo_taxa_deslocamento");
-
-                    b.Property<int>("custo_taxa_operalizacao")
-                        .HasColumnType("int")
-                        .HasColumnName("custo_taxa_operalizacao");
-
-                    b.Property<int>("custo_transporte")
-                        .HasColumnType("int")
-                        .HasColumnName("custo_transporte");
-
-                    b.Property<int>("qtd_balcoes")
-                        .HasColumnType("int")
-                        .HasColumnName("qtd_balcoes");
-
-                    b.Property<int>("qtd_coordenador")
-                        .HasColumnType("int")
-                        .HasColumnName("qtd_coordenador");
-
-                    b.Property<int>("qtd_impostos_federais")
-                        .HasColumnType("int")
-                        .HasColumnName("qtd_impostos_federais");
-
-                    b.Property<int>("qtd_profissionais_gerais")
-                        .HasColumnType("int")
-                        .HasColumnName("qtd_profissionais_gerais");
-
-                    b.Property<int>("qtd_seguro_reserva")
-                        .HasColumnType("int")
-                        .HasColumnName("qtd_seguro_reserva");
-
-                    b.Property<int>("qtd_taxa_deslocamento")
-                        .HasColumnType("int")
-                        .HasColumnName("qtd_taxa_deslocamento");
-
-                    b.Property<int>("qtd_taxa_operalizacao")
-                        .HasColumnType("int")
-                        .HasColumnName("qtd_taxa_operalizacao");
-
-                    b.Property<int>("qtd_transporte")
-                        .HasColumnType("int")
-                        .HasColumnName("qtd_transporte");
-
-                    b.HasKey("id_custo_operacional");
-
-                    b.ToTable("Custo Operacional");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Deposito", b =>
-                {
-                    b.Property<int>("id_item")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_item");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_item"), 1L, 1);
-
-                    b.Property<int?>("Insumosid_insumo")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("custo_tecnico")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_deposito");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("descricao_observacao")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("descricao_observacao");
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("medida_de_armazenamento")
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("medida_de_armazenamento");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("nome_item")
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nome_item");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("quantidade")
-                        .HasColumnType("int")
-                        .HasColumnName("quantidade");
+                    b.HasKey("LoginProvider", "ProviderKey");
 
-                    b.Property<string>("setor_armazenamento")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("setor_armazenamento");
+                    b.HasIndex("UserId");
 
-                    b.HasKey("id_item");
-
-                    b.HasIndex("Insumosid_insumo");
-
-                    b.ToTable("Deposito");
+                    b.ToTable("AspNetUserLogins", (string)null);
                 });
 
-            modelBuilder.Entity("AtelieDrinks.Models.Drinks", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.Property<int>("id_drink")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_drink");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_drink"), 1L, 1);
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<decimal>("custo_tecnico")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_tecnico");
+                    b.HasKey("UserId", "RoleId");
 
-                    b.Property<string>("ingredientes")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ingredientes");
+                    b.HasIndex("RoleId");
 
-                    b.Property<string>("nome_drink")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nome_drink");
-
-                    b.Property<int>("quantidade")
-                        .HasColumnType("int")
-                        .HasColumnName("quantidade");
-
-                    b.HasKey("id_drink");
-
-                    b.ToTable("Drinks");
+                    b.ToTable("AspNetUserRoles", (string)null);
                 });
 
-            modelBuilder.Entity("AtelieDrinks.Models.Ficha_tecnica", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.Property<int>("id_ficha")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_ficha");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_ficha"), 1L, 1);
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
-                    b.Property<decimal>("custo_base_alcoolica")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_base_alcoolica");
+                    b.Property<string>("Name")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
-                    b.Property<decimal>("custo_insumo")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_insumo");
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("medida")
-                        .HasColumnType("int")
-                        .HasColumnName("medida");
+                    b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.Property<decimal>("ml_unidade")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("ml_unidade");
-
-                    b.Property<string>("nome_base_alcoolica")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nome_base_alcoolica");
-
-                    b.Property<string>("nome_drink")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nome_drink");
-
-                    b.Property<string>("nome_insumo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nome_insumo");
-
-                    b.Property<decimal>("valor_ficha")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("valor_ficha");
-
-                    b.HasKey("id_ficha");
-
-                    b.ToTable("Ficha Tecnica");
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AtelieDrinks.Models.Historico", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.Property<int>("id_historico")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_historico");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_historico"), 1L, 1);
-
-                    b.Property<int?>("Historicoid_historico")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("base_orcamento")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("base_orcamento");
-
-                    b.Property<decimal>("comissao_comercial")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("comisao_comercial");
-
-                    b.Property<decimal>("comissao_gerencia")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("comisao_gerencia");
-
-                    b.Property<decimal>("custo_operacional")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_operacional");
-
-                    b.Property<decimal>("custo_por_pessoa")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_por_pessoa");
-
-                    b.Property<decimal>("custo_total")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_total");
-
-                    b.Property<decimal>("custo_total_insumos")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_total_insumos");
-
-                    b.Property<decimal>("margem_negociacao")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("margem_negociacao");
-
-                    b.Property<int>("numero_pessoas")
-                        .HasColumnType("int")
-                        .HasColumnName("numero_pessoas");
-
-                    b.Property<decimal>("previsao_lucro")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("previsao_lucro");
-
-                    b.Property<int>("qtde_convidados")
-                        .HasColumnType("int")
-                        .HasColumnName("qtde_convidados");
-
-                    b.Property<int>("qtde_drinks")
-                        .HasColumnType("int")
-                        .HasColumnName("qtde_drinks");
-
-                    b.Property<decimal>("valor_arredondado_pra_cima")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("valor_arredondado_pra_cima");
-
-                    b.Property<decimal>("valor_orcamento")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("valor_orcamento");
-
-                    b.Property<decimal>("valor_primario")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("valor_primario");
-
-                    b.HasKey("id_historico");
-
-                    b.HasIndex("Historicoid_historico");
-
-                    b.ToTable("Historico");
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("AtelieDrinks.Models.Insumos", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.Property<int>("id_insumo")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_insumo");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_insumo"), 1L, 1);
-
-                    b.Property<int?>("Ficha_tecnicaid_ficha")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Orcamentoid_orcamento")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("custo_insumo")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_insumo");
-
-                    b.Property<string>("nome_insumo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nome_insumo");
-
-                    b.Property<int>("quantidade")
-                        .HasColumnType("int")
-                        .HasColumnName("quantidade");
-
-                    b.HasKey("id_insumo");
-
-                    b.HasIndex("Ficha_tecnicaid_ficha");
-
-                    b.HasIndex("Orcamentoid_orcamento");
-
-                    b.ToTable("Insumos");
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("AtelieDrinks.Models.Marca", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.Property<int>("id_marca")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_marca");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_marca"), 1L, 1);
-
-                    b.Property<int?>("Base_alcoolicaid_base_alcoolica")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Base_alcoolicaid_base_alcoolica1")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("custo_garrafa")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_garrafa");
-
-                    b.Property<int>("id_bebida")
-                        .HasColumnType("int")
-                        .HasColumnName("id_bebida");
-
-                    b.Property<string>("nome_bebida")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nome_bebida");
-
-                    b.Property<string>("nome_marca")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nome_marca");
-
-                    b.HasKey("id_marca");
-
-                    b.HasIndex("Base_alcoolicaid_base_alcoolica");
-
-                    b.HasIndex("Base_alcoolicaid_base_alcoolica1");
-
-                    b.ToTable("Marca");
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("AtelieDrinks.Models.Orcamento", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.Property<int>("id_orcamento")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_orcamento");
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_orcamento"), 1L, 1);
-
-                    b.Property<decimal>("base_orcamento")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("base_orcamento");
-
-                    b.Property<decimal>("comissao_comercial")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("comisao_comercial");
-
-                    b.Property<decimal>("comissao_gerencia")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("comisao_gerencia");
-
-                    b.Property<decimal>("custo_operacional")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_operacional");
-
-                    b.Property<decimal>("custo_por_pessoa")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_por_pessoa");
-
-                    b.Property<decimal>("custo_total")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_total");
-
-                    b.Property<decimal>("custo_total_insumos")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("custo_total_insumos");
-
-                    b.Property<decimal>("margem_negociacao")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("margem_negociacao");
-
-                    b.Property<int>("numero_pessoas")
-                        .HasColumnType("int")
-                        .HasColumnName("numero_pessoas");
-
-                    b.Property<decimal>("previsao_lucro")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("previsao_lucro");
-
-                    b.Property<int>("qtde_convidados")
-                        .HasColumnType("int")
-                        .HasColumnName("qtde_convidados");
-
-                    b.Property<int>("qtde_drinks")
-                        .HasColumnType("int")
-                        .HasColumnName("qtde_drinks");
-
-                    b.Property<decimal>("valor_arredondado_pra_cima")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("valor_arredondado_pra_cima");
-
-                    b.Property<decimal>("valor_orcamento")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("valor_orcamento");
-
-                    b.Property<decimal>("valor_primario")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("valor_primario");
-
-                    b.HasKey("id_orcamento");
-
-                    b.ToTable("Orcamento");
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("AtelieDrinks.Models.Base_alcoolica", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("AtelieDrinks.Models.Ficha_tecnica", null)
-                        .WithMany("id_base_alcoolica")
-                        .HasForeignKey("Ficha_tecnicaid_ficha");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Custo_deslocamento", b =>
-                {
-                    b.HasOne("AtelieDrinks.Models.Custo_operacional", null)
-                        .WithMany("id_taxa_deslocamento")
-                        .HasForeignKey("Custo_operacionalid_custo_operacional");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Deposito", b =>
-                {
-                    b.HasOne("AtelieDrinks.Models.Insumos", null)
-                        .WithMany("id_item")
-                        .HasForeignKey("Insumosid_insumo");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Historico", b =>
-                {
-                    b.HasOne("AtelieDrinks.Models.Historico", null)
-                        .WithMany("id_orcamento")
-                        .HasForeignKey("Historicoid_historico");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Insumos", b =>
-                {
-                    b.HasOne("AtelieDrinks.Models.Ficha_tecnica", null)
-                        .WithMany("id_insumo")
-                        .HasForeignKey("Ficha_tecnicaid_ficha");
-
-                    b.HasOne("AtelieDrinks.Models.Orcamento", null)
-                        .WithMany("id_insumo")
-                        .HasForeignKey("Orcamentoid_orcamento");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Marca", b =>
-                {
-                    b.HasOne("AtelieDrinks.Models.Base_alcoolica", null)
-                        .WithMany("id_bebida")
-                        .HasForeignKey("Base_alcoolicaid_base_alcoolica");
-
-                    b.HasOne("AtelieDrinks.Models.Base_alcoolica", null)
-                        .WithMany("id_marca")
-                        .HasForeignKey("Base_alcoolicaid_base_alcoolica1");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Base_alcoolica", b =>
-                {
-                    b.Navigation("id_bebida");
-
-                    b.Navigation("id_marca");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Custo_operacional", b =>
-                {
-                    b.Navigation("id_taxa_deslocamento");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Ficha_tecnica", b =>
-                {
-                    b.Navigation("id_base_alcoolica");
-
-                    b.Navigation("id_insumo");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Historico", b =>
-                {
-                    b.Navigation("id_orcamento");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Insumos", b =>
-                {
-                    b.Navigation("id_item");
-                });
-
-            modelBuilder.Entity("AtelieDrinks.Models.Orcamento", b =>
-                {
-                    b.Navigation("id_insumo");
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
