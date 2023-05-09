@@ -1,13 +1,22 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
+    
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="@Url.Content("~/css/menulateral.css")" rel="stylesheet">
+    <!-- JS -->
+    <script src="@Url.Content("~/js/menulateral.js")" defer></script>
+
 
     <script src="@Url.Content("~/js/app.js")" defer></script>
     <link href="@Url.Content("~/css/app.css")" rel="stylesheet">
@@ -25,129 +34,98 @@
 
     <script src="https://kit.fontawesome.com/fd016a7d8f.js" crossorigin="anonymous"></script>
 
-
 </head>
 
-<body id="page-top">
 
+<body>
+    <div class="grid-container">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-
-
-        <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion twitch" style="background-color: #471320" id="accordionSidebar">
-
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
-                <div class="sidebar-brand-icon">
-                    <img height="50px" src="@Url.Content("~/imagens/logoad.png")" />
-                </div>
-            </a>
-            <!-- Divider -->
-
-            <hr class="sidebar-divider">
-
-            <center>
-                <a href="User" style="text-decoration: none;">
-                    <img height="100px" src="/imagens/user.png" class="imageuser" alt="" />
-                    <h2 class="h2user">Bruno</h2>
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="@Url.Content("~/home")">
+                    <div class="sidebar-brand-icon">
+                        <img height="50px" src="@Url.Content("~/imagens/logoad.png")" />
+                    </div>
                 </a>
+            </div>
+            <div class="header-right">
                 
-            </center>
-
-            <br>
-
-            <!-- Divider -->
-
-            <hr class="sidebar-divider">
-
-
-            <!-- Heading -->
-            <div class="sidebar-heading" style="font-size: 12.5px; color: #d25e4f">
-                Menu:
+                <span class=" fas fa-sign-out-alt">Logout</span>
             </div>
+        </header>
+        <!-- End Header -->
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+            <div class="sidebar-title">
+                
+                <center>
+                    <a href="User" class="sem_sumblinhado">
+                        <img height="200px" src="/imagens/user.png" class="imageuser" alt="" />
+                        <h2>Bruno</h2>
+                    </a>
 
-            <!-- Nav Item - Página de usuários -->
-            <li class="nav-item">
-                <a class="nav-link" href="home">
-                    <i class="fa-solid fa-champagne-glasses" style="margin-left: 1.25%"></i>
-                    <span style="font-size: 14.5px; margin-left: 1.25%; color:white">Dashboard</span>
-                </a>
-            </li>
+                </center>
 
-            <!-- Nav Item - Página de funcionários -->
-            <li class="nav-item">
-                <a class="nav-link" href="Orçamento">
-                    <i class="fa-solid fa-champagne-glasses"></i>
-                    <span style="font-size: 14.5px; color: white">Orçamento</span>
-                </a>
-            </li>
-            <!-- Nav Item - Página de funcionários -->
-            <li class="nav-item">
-                <a class="nav-link" href="estoque">
-                    <i class="fa-solid fa-champagne-glasses"></i>
-                    <span style="font-size: 14.5px; color: white"> Estoque</span>
-                </a>
-            </li>
-            <!-- Nav Item - Página de funcionários -->
-            <li class="nav-item">
-                <a class="nav-link" href="Historico">
-                    <i class="fa-solid fa-champagne-glasses"></i>
-                    <span style="font-size: 14.5px; color: white">Historico</span>
-                </a>
-            </li>
-            <!-- Nav Item - Página de funcionários -->
-            <li class="nav-item">
-                <a class="nav-link" href="fichaTecnica">
-                    <i class="fa-solid fa-champagne-glasses"></i>
-                    <span style="font-size: 14.5px; color: white">Fichas Técnicas</span>
-                </a>
-            </li>
-            <!-- Nav Item - Página de funcionários -->
-            <li class="nav-item">
-                <a class="nav-link" href="Insumos">
-                    <i class="fa-solid fa-champagne-glasses"></i>
-                    <span style="font-size: 14.5px; color: white"> Insumos</span>
-                </a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider cor" style="margin-bottom: -1%">
-
-            <!-- Nav Item - Logout -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt iconmenu" style="margin-left: 1%"></i>
-                    <span style="font-size: 14.5px; margin-left: 1%; color: #d25e4f">Logout</span>
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-
-                </form>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block cor">
-
-        </ul>
-        <!-- End of Sidebar -->
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content" style="background-color:black;">
-
-                @RenderBody()
-                @RenderSection("Scripts", required: false)
+                
             </div>
-            <!-- End of Main Content -->
+            
+            <!-- Nav Item - Página de Dashboard -->
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="@Url.Content("~/home")" target="_blank">
+                        <span class="material-icons-outlined">dashboard</span> Dashboard
+                    </a>
+                </li>
+                <!-- Nav Item - Página de Orcamento -->
+                <li class="sidebar-list-item">
+                    <a href="@Url.Content("~/Orcamento")" target="_blank">
+                        <span class="material-icons-outlined">inventory_2</span> Orçamento
+                    </a>
+                </li>
+                <!-- Nav Item - Página de estoque -->
+                <li class="sidebar-list-item">
+                    <a href="@Url.Content("~/estoque")" target="_blank">
+                        <span class="material-icons-outlined">fact_check</span> Estoque
+                    </a>
+                </li>
+                <!-- Nav Item - Página de Historico -->
+                <li class="sidebar-list-item">
+                    <a href="@Url.Content("~/Historico")" target="_blank">
+                        <span class="material-icons-outlined">add_shopping_cart</span> Historico
+                    </a>
+                </li>
+                <!-- Nav Item - Página de Fichas Técnicas -->
+                <li class="sidebar-list-item">
+                    <a href="@Url.Content("~/fichaTecnica")" target="_blank">
+                        <span class="material-icons-outlined">shopping_cart</span> Sales Orders
+                    </a>
+                </li>
+                <!-- Nav Item - Página de Insumos -->
+                <li class="sidebar-list-item">
+                    <a href="@Url.Content("~/Insumos")" target="_blank">
+                        <span class="material-icons-outlined">poll</span> Insumos
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                        <span class="material-icons-outlined">settings</span> Settings
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main -->
+        <main class="main-container fundo_body">
+             @RenderBody()
+             @RenderSection("Scripts", required: false)
+
             <!-- Footer -->
             <footer class="sticky-footer" style="background-color: #b3b3b3">
                 <div class="container my-auto">
@@ -156,48 +134,17 @@
                     </div>
                 </div>
             </footer>
-            <!-- End of Footer -->
 
-        </div>
-        <!-- End of Content Wrapper -->
+    </main>
+        <!-- End Main -->
 
     </div>
-    <!-- End of Page Wrapper -->
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <!-- <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-    <!-- Core plugin JavaScript-->
-    <script defer src="js/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script defer src="js/sb-admin-2.js"></script>
-
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
 </body>
-
 </html>
-
-<style>
-
-
-
-</style>
 
