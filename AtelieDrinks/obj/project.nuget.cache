@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/YBedq4P++b9QGS6wfdSx7NxeYbe07bT/TJTUIv6OQDdQ3s++sDl1X7jzXIoUIWqLVZSKc/Yd7WqnWu14/BsQQ==",
+  "dgSpecHash": "7kR1GD9jxtoZd8O7eCza3DUIVM0Z11LStcHG1UM6YphnOiaoYSD/lU/9ZTod/RXjfNAwBBniHj6HXNMPusEQQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bruno\\Source\\Repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
+  "projectFilePath": "C:\\Users\\bruno\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bruno\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

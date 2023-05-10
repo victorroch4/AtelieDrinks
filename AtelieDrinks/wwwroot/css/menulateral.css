@@ -76,6 +76,7 @@ body {
     overflow-y: auto;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
+   
 }
 
 .sidebar-title {
@@ -299,3 +300,61 @@ body {
     background-color: black;
 }
 
+/* ---------- DATA TABLE ---------- */
+
+.table thead th {
+    background-color: #fff;
+    color: #000;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #000;
+    color: #fff;
+}
+
+.table tr:nth-child(even) {
+    background-color: #d3d3d3;
+    color: #000;
+}
+
+#dtBasicExample_filter, .dt-button, #dtBasicExample_info, .paginate_button, #dtBasicExample_next, #dtBasicExample_previous, #dtBasicExample_length {
+    color: #000 !important;
+}
+
+.dt-button {
+    background-color: #000;
+}
+
+.dataTables_wrapper .dataTables_filter input, .dataTables_wrapper .dataTables_length select {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+#dtBasicExample_length {
+    width: 100%;
+}
+
+.card-body1 {
+    background-color: #5554 !important;
+    background-image: url("images/logos.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-blend-mode: saturation;
+    background-position: center top;
+}
+
+div.dt-datetime {
+    width: auto !important;
+}
+
+.mb-0, .display-4 {
+    color: #fff !important;
+}
+
+.adicionar {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}

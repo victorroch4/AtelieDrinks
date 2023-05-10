@@ -18,7 +18,6 @@ function closeSidebar() {
 }
 
 
-
 // ---------- CHARTS ----------
 
 // BAR CHART
@@ -116,3 +115,18 @@ var areaChartOptions = {
 
 var areaChart = new ApexCharts(document.querySelector("#area-chart"), areaChartOptions);
 areaChart.render();
+
+/* ---------- Data table ---------- */
+
+$(document).ready(function () {
+    var table = $('#dtBasicExample').DataTable({
+        language: {
+            url: '/js/pt-BR.json'
+        },
+        dom: 'lBfrtip',
+        buttons: [
+            'pdf', 'excel'
+        ],
+    });
+
+});
