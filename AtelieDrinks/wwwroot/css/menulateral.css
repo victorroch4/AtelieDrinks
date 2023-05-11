@@ -63,6 +63,7 @@ body {
 
 .menu-icon {
     display: none;
+    cursor: pointer;
 }
 
 
@@ -240,7 +241,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #4f35a1;
+    background-color: #471320df;
     border-radius: 10px;
 }
 
@@ -309,7 +310,7 @@ body {
 
 .table tr:nth-child(odd) {
     background-color: #000;
-    color: #fff;
+    color: #000;
 }
 
 .table tr:nth-child(even) {
@@ -337,9 +338,9 @@ body {
 .card-body1 {
     background-color: #5554 !important;
     background-image: url("images/logos.png");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    webkit-background-size: cover;
+    moz-background-size: cover;
+    o-background-size: cover;
     background-size: cover;
     background-blend-mode: saturation;
     background-position: center top;

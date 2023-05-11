@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AtelieDrinks.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20230509042303_teste")]
-    partial class teste
+    [Migration("20230511163239_oi")]
+    partial class oi
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
