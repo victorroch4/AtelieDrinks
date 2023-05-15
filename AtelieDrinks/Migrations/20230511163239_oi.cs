@@ -5,7 +5,7 @@
 namespace AtelieDrinks.Migrations
 {
     /// <inheritdoc />
-    public partial class teste : Migration
+    public partial class oi : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
