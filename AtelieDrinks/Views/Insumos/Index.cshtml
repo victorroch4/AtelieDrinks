@@ -10,247 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Insumos</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    @*Script para validar a busca*@
-    <script>
-        $(document).ready(function () {
-            $("#search-input").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#tabela-insumos tbody tr").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)    
-                });
-            });
-        $('#tabela-insumos').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'excel',
-                    'pdf',
-                    'print'
-                ]
-            });
-        });
-    </script>
-
-    <style>
     
-    .cabecalho{
-        width: 100%;
-        height:50%;
-        background: #ffffff;
-        text-align:center;
-        background-image: linear-gradient(to bottom, #471320, #000000);
-        position: relative;
 
-    }
-
-    .img-cabecalho {
-        width: 70%;
-        height: 100%;
-    }
-
-    .container {
-        position: relative;
-        width: 100%;
-    }
-
-
-    .container .texto {
-        position: absolute;
-        top: 62%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #ffffff;
-        padding: 10px;
-        font-size: 50px;
-    }
-
-    h1{
-        position:center;
-        text-align: center;
-        font-size: 50px;
-        font-family:Amaranth;
-        text-shadow: 5px 5px 5px black;
-    }
-
-    h2{
-        position:absolute;
-        margin:0;
-        text-align:center;
-        font-size: 20px;
-        font-family:Montserrat;
-        color: #ffffff;
-        padding-left:31%;
-        padding-top:0.6%;
-    }
-
-    .meio{
-        text-align:center;
-        background: #000000;
-        /*padding: 20px 0px 0px 0px;*/
-        display:flex;
-        height:80px;
-        margin-top:80px;
-        margin-bottom: 60px;
-        position: relative;
-    }
-
-
-    .search-box{
-        position:absolute;
-        left:31%;
-        background: none;
-        height:40px;
-        padding:10px;
-        border: 1px solid white;
-        border-radius:15px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        margin-top: 55px;
-        width: 550px;
-    }
-
-    .search-txt{
-        border:none;
-        background:none;
-        outline:none;
-        padding:0;
-        color:#f0f5fb;
-        font-size:16px;
-        line-height:40px;
-        width:500px;
-        padding: 0 6px;
-    }
-
-    .search-btn{
-        width:40px;
-        height:40px;
-        border-radius: 50%;
-        background: none;
-        display:flex;
-        justify-content:center;
-        align-items: center;
-        transition: .5s;
-    }
-
-    .add-box{
-        position:absolute;
-        left:60%;
-        background: none;
-        height:28px;
-        padding:10px;
-        border: 1px solid green;
-        border-radius:10px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        margin-top:0.5%;
-    }
-
-    .add-txt{
-        margin:0;
-        border:none;
-        background:none;
-        outline:none;
-        padding:0;
-        color:#f0f5fb;
-        font-size:16px;
-        line-height:40px;
-    }
-
-    .add-btn{
-        width:24px;
-        height:40px;
-        border-radius: 50%;
-        background: none;
-        display:flex;
-        justify-content:center;
-        align-items: center;
-    }
-
-    .table-container{
-        padding: 0 10%;
-        margin: 80px auto 0;
-    }
-
-    .tabela{
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .tabela thead{
-        background-color: #471320;
-    }
-    .tabela thead tr th{
-        font-size: 14px;
-        font-weight:600;
-        letter-spacing: 0.35px;
-        color: #ffffff;
-        opacity: 1;
-        padding: 12px;
-        vertical-align: top;
-        text-align: center;
-        border: 1px solid #dee2e685;
-   }
-   .tabela tbody tr td{
-       font-size: 14px;
-       letter-spacing: 0.35px;
-       font-weight: normal;
-       color: #f1f1f1;
-       background-color: #000000;
-       padding: 8px;
-       text-align: center;
-       border: 1px solid #dee2e685;
-   }
-   .tabela .text_open{
-       font-size: 14px;
-       font-weight: bold;
-       letter-spacing: 0.35px;
-       color: #ff1046;
-   }
-
-   .tabela .tbody tr td .btn-edit{
-       width: 130px;
-       text-decoration: none;
-       line-height: 35px;
-       display: block;
-       background-color: #ff1046;
-       display: block;
-       font-weight: 600;
-       color: #ffffff;
-       text-align: center;
-       vertical-align: middle;
-       user-select: none;
-       border: 1px solid transparent;
-       font-size: 14px;
-       opacity: 1;
-   }
-
-    .adicionar {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-    }
-
-        .adicionar a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: #28a745;
-            color: #fff;
-            font-size: 1rem;
-        }
-
-            .adicionar a i {
-                margin-right: 10px;
-                font-size: 1rem;
-            }
-
-</style>
-
+    
 </head>
 <body>
    <div class="cabecalho">
@@ -262,12 +24,15 @@
         </div>
         <div class="meio">
             <h2>Insumos Gerais</h2>
-            <div  class="add-box">
+           
                 <a href="@Url.Action("Create")" class="add-btn">
-                    <img src="~/images/icon-mais.svg" alt="mais" height="15px" width="15px">
+                    <div  class="add-box">
+                        <img src="~/images/icon-mais.svg" alt="mais" height="15px" width="15px">
+                    <p style="color:green" class="add-txt">Adicionar</p>
+                    </div>
                 </a>
-                <p style="color:green" class="add-txt">Adicionar</p>
-             </div>
+                
+             
             <div class="search-box">
                 <input type="text" class="search-txt" id="search-input" placeholder="">
                 <a href="#" class="search-btn">
@@ -311,19 +76,6 @@
         </div>
         </div>
 
-        <!-- Data - Table import -->
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/date-1.1.2/r-2.3.0/sb-1.3.4/sp-2.0.2/sl-1.4.0/datatables.min.css" />
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js" defer></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" crossorigin="anonymous" defer></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js" defer></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/date-1.1.2/r-2.3.0/sb-1.3.4/sp-2.0.2/sl-1.4.0/datatables.min.js" defer></script>
-
+        
 </body>
 </html>
