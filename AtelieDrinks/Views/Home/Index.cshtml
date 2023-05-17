@@ -1,5 +1,76 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    <!-- ELEMENTOS DA TELA DE CARREGAMENTO -->
+    <div class="back-main">
+        <div class="pane-row">
+            <div class="back-pane al-top"></div>
+        </div>
+    </div>
+
+    <div class="back-container">
+        <div id="letter">Atelier Drink's</div>
+        <div id="letter2">BARTENDER'S</div>
+        <div id="description">Desenvolvido por CONSELT</div>
+
+        <div id="animation">
+            <div class="rumandcoke">
+                <div class="glass"></div>
+                <div class="contents"></div>
+                <div class="straw"></div>
+                <div class="lime"></div>
+                <div class="ice">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="martini">
+                <div class="glass"></div>
+                <div class="contents"></div>
+                <div class="stem"></div>
+                <div class="olive"></div>
+                <div class="base"></div>
+            </div>
+            <div class="mug">
+                <div class="handle"></div>
+                <div class="glass">
+                    <div class="body"></div>
+                    <div class="contents">
+                        <div class="fizz">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="foam">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- FIM DOS ELEMENTOS DA TELA DE CARREGAMENTO -->
+
 
     <link href="css/stylecards.css" rel="stylesheet">
     <link href="js/scriptdashboard.js">
@@ -97,5 +168,21 @@
 
 
 
-
 }
+
+<!-- TELA DE CARREGAMENTO -->
+<script>
+    $(function () {
+        console.log('Página pronta');
+    })
+
+
+    $(window).bind("load", function () {
+
+        var tempo = setTimeout(function () {   // remova esta linha para hospedar
+            $('.back-container').fadeOut(120);
+            setTimeout(function () { $('.back-pane').addClass('pane-hidden'); }, 120);
+            setTimeout(function () { $('.back-main').hide(); }, 600);
+        }, 4000);  // remova esta linha para hospedar
+    });
+</script>
