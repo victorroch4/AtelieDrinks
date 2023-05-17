@@ -20,25 +20,27 @@ namespace AtelieDrinks.Controllers
 
             if (numberPage.HasValue)
             {
-                nextPage = numberPage.Value + 1;
+                nextPage = numberPage.Value;
+               
             }
+            return View($"~/Views/Orcamento/Index{nextPage}.cshtml");
 
-            switch (nextPage)
-            {
-                case 1:
-                    return View("~/Views/Orcamento/Index.cshtml");
-                case 2:
-                    return View("~/Views/Orcamento/Index2.cshtml");
-                case 3:
-                    return View("~/Views/Orcamento/Index3.cshtml");
-                case 4:
-                    return View("~/Views/Orcamento/Index4.cshtml");
-                case 5:
-                    return View("~/Views/Orcamento/Index5.cshtml");
-                // Adicione outros casos conforme necessário
-                default:
-                    return NotFound(); // Retorna um erro 404 se o número da página não for válido
-            }
+            //switch (nextPage)
+            //{
+            //    case 1:
+            //        return View("~/Views/Orcamento/Index.cshtml");
+            //    case 2:
+            //        return View("~/Views/Orcamento/Index2.cshtml");
+            //    case 3:
+            //        return View("~/Views/Orcamento/Index3.cshtml");
+            //    case 4:
+            //        return View("~/Views/Orcamento/Index4.cshtml");
+            //    case 5:
+            //        return View("~/Views/Orcamento/Index5.cshtml");
+            //    // Adicione outros casos conforme necessário
+            //    default:
+            //        return NotFound(); // Retorna um erro 404 se o número da página não for válido
+            //}
         }
 
         /*

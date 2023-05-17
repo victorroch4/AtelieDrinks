@@ -64,6 +64,74 @@
 
 
 <body>
+    <!-- ELEMENTOS DA TELA DE CARREGAMENTO -->
+    <div class="back-main">
+        <div class="pane-row">
+            <div class="back-pane al-top"></div>
+        </div>
+    </div>
+
+    <div class="back-container">
+        <div id="description">Desenvolvido por CONSELT</div>
+
+        <div id="animation">
+            <div class="rumandcoke">
+                <div class="glass"></div>
+                <div class="contents"></div>
+                <div class="straw"></div>
+                <div class="lime"></div>
+                <div class="ice">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="martini">
+                <div class="glass"></div>
+                <div class="contents"></div>
+                <div class="stem"></div>
+                <div class="olive"></div>
+                <div class="base"></div>
+            </div>
+            <div class="mug">
+                <div class="handle"></div>
+                <div class="glass">
+                    <div class="body"></div>
+                    <div class="contents">
+                        <div class="fizz">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="foam">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- FIM DOS ELEMENTOS DA TELA DE CARREGAMENTO -->
 
     
    
@@ -109,37 +177,37 @@
             <!-- Nav Item - Página de Dashboard -->
             <ul class="sidebar-list">
                 <li class="sidebar-list-item">
-                    <a href="@Url.Content("~/home")" target="_blank">
+                    <a href="@Url.Content("~/home")" target="_self">
                         <span class="material-icons-outlined">dashboard</span> Dashboard
                     </a>
                 </li>
                 <!-- Nav Item - Página de Orcamento -->
                 <li class="sidebar-list-item">
-                    <a href="@Url.Content("~/Orcamento")" target="_blank">
+                    <a href="@Url.Content("~/Orcamento")" target="_self">
                         <span class="material-icons-outlined">inventory_2</span> Orçamento
                     </a>
                 </li>
                 <!-- Nav Item - Página de estoque -->
                 <li class="sidebar-list-item">
-                    <a href="@Url.Content("~/estoque")" target="_blank">
+                    <a href="@Url.Content("~/estoque")" target="_self">
                         <span class="material-icons-outlined">fact_check</span> Estoque
                     </a>
                 </li>
                 <!-- Nav Item - Página de Historico -->
                 <li class="sidebar-list-item">
-                    <a href="@Url.Content("~/Historico")" target="_blank">
+                    <a href="@Url.Content("~/Historico")" target="_self">
                         <span class="material-icons-outlined">add_shopping_cart</span> Historico
                     </a>
                 </li>
                 <!-- Nav Item - Página de Fichas Técnicas -->
                 <li class="sidebar-list-item">
-                    <a href="@Url.Content("~/fichaTecnica")" target="_blank">
+                    <a href="@Url.Content("~/fichaTecnica")" target="_self">
                         <span class="material-icons-outlined">shopping_cart</span> Sales Orders
                     </a>
                 </li>
                 <!-- Nav Item - Página de Insumos -->
                 <li class="sidebar-list-item">
-                    <a href="@Url.Content("~/Insumos")" target="_blank">
+                    <a href="@Url.Content("~/Insumos")" target="_self">
                         <span class="material-icons-outlined">poll</span> Insumos
                     </a>
                 </li>
@@ -151,6 +219,7 @@
             </ul>
         </aside>
         <!-- End Sidebar -->
+
         
         <!-- Main -->
         <main class="main-container fundo_body">
@@ -171,6 +240,24 @@
     <script src="js/scripts.js"></script>
 </body>
 </html>
+
+<!-- TELA DE CARREGAMENTO -->
+<script>
+    $(function () {
+        console.log('Página pronta');
+    })
+
+
+    $(window).bind("load", function () {
+
+        var tempo = setTimeout(function () {   // remova esta linha para hospedar
+            $('.back-container').fadeOut();
+            setTimeout(function () { $('.back-pane').addClass('pane-hidden'); },);
+            setTimeout(function () { $('.back-main').hide(); },);
+        }, 650);  // remova esta linha para hospedar
+    });
+</script>
+
 
 
 
