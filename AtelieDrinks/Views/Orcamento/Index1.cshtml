@@ -1,4 +1,5 @@
-﻿@model IEnumerable<AtelieDrinks.Models.Orcamento>
+﻿@model AtelieDrinks.Models.Orcamento
+
 
 @{
     ViewData["Title"] = "Index1";
@@ -37,7 +38,7 @@
                             <!--Lista COORDENADOR-->
                             <div class="form-input" style="width:45px">
                                 <!--Input QTD-->
-                                <input type="value" required="">
+                                <input asp-for="numero_pessoas" type="value" >
                                 <label><span>QTD</span></label>
                             </div>
                         </div> <!--Fim lista COORDENADOR-->
@@ -50,10 +51,11 @@
 
             <div class="list-buttons">
                 <button class="button excluir" onclick="window.location='@Url.Action("Index", "Home")'">Voltar</button>
-                <button class="button continuar" onclick="window.location='@Url.Action("Index", "Orcamento", new { numberPage = 2 })'">Continuar</button>
+                <button class="button continuar" value="Createnumero_pessoas" onclick="window.location='@Url.Action("Index", "Orcamento", new { numberPage = 2 })'">Continuar</button>
             </div>
 
         </div> <!--fim CONTENT-->
     </div>  <!--fim BLACKBOX-->
 </body>
 </html>
+
