@@ -27,7 +27,7 @@
         <div class="content">
             <!--box-->
             <div class="content-box">
-                <div style="margin: 210px 0 50px 0;" class="margin-box">
+                <div style="margin: 350px 0 50px 0;" class="margin-box">
                     <h3>CUSTOS OPERACIONAIS</h3>
                     <p style="margin-top:5px">Profissões gerais, coordenadores, transportadores, etc...</p>
 
@@ -160,7 +160,7 @@
             </div> <!--fim content box-->
 
             <div class="list-buttons">
-                <button class="button excluir">Voltar</button>
+                <button class="button excluir" onclick="window.location='@Url.Action("Index", "Orcamento", new { numberPage = 1 })'">Voltar</button>
                 <button class="button continuar" onclick="window.location='@Url.Action("Index", "Orcamento", new { numberPage = 3 })'">Continuar</button>
             </div>
 
