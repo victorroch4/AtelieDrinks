@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\AtelieDrinks",
-    "\\AtelieDrinks\\Views",
-    "\\AtelieDrinks\\Views\\Insumos",
-    "\\AtelieDrinks\\Views\\Orcamento"
+    ""
   ],
-  "SelectedNode": "\\AtelieDrinks\\Views\\Orcamento\\Index.cshtml",
+  "SelectedNode": "\\AtelieDrinks.sln",
   "PreviewInSolutionExplorer": false
 }

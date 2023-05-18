@@ -93,7 +93,7 @@ body {
     }
 
 .sidebar-brand {
-    margin-top: 15px;
+    
     font-size: 20px;
     font-weight: 700;
 }
@@ -391,13 +391,14 @@ button.dt-button:hover.buttons-excel.buttons-html5 {
     visibility: hidden;
 }
 
-.dataTables_wrapper .dataTables_paginate {
+.dataTables_wrapper .dataTables_paginate{
     color: #ffffff;
 }
 
 .dataTables_wrapper .dataTables_info { /*Mostrador de resultados*/
-
+    
     color: #fff !important;
+    
 }
 
 
@@ -417,19 +418,13 @@ element.style {
     background-color: white !important;
 }
 
-    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
-        color: white;
-    }
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled{
+    color: white;
+}
 
 
 
-
-
-
-
-
-    /*------Página de Insumos-------*/
-
+/* ---------- Pagina de Insumos ---------- */
 
 
 .cabecalho {
@@ -649,5 +644,6 @@ h2 {
             margin-right: 10px;
             font-size: 1rem;
         }
+
 
 

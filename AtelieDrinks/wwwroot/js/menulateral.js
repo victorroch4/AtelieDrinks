@@ -119,14 +119,20 @@ areaChart.render();
 /* ---------- Data table ---------- */
 
 $(document).ready(function () {
-    var table = $('#dtBasicExample').DataTable({
-        language: {
-            url: '/js/pt-BR.json'
-        },
-        dom: 'lBfrtip',
-        buttons: [
-            'pdf', 'excel'
-        ],
+    $("#search-input").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#tabela-insumos tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
     });
-
+    $('#tabela-insumos').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'excel',
+            'pdf',
+            'print'
+        ]
+    });
 });
+
+
