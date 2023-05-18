@@ -16,31 +16,22 @@ namespace AtelieDrinks.Controllers
         [Route("Orcamento/{numberPage:int?}")]
         public ActionResult Index(int? numberPage)
         {
-            int nextPage = 1;
-
-            if (numberPage.HasValue)
+            switch (numberPage)
             {
-                nextPage = numberPage.Value;
-               
+                case 1:
+                    return View("~/Views/Orcamento/Index1.cshtml");
+                case 2:
+                    return View("~/Views/Orcamento/Index2.cshtml");
+                case 3:
+                    return View("~/Views/Orcamento/Index3.cshtml");
+                case 4:
+                    return View("~/Views/Orcamento/Index4.cshtml");
+                case 5:
+                    return View("~/Views/Orcamento/Index5.cshtml");
+                // Adicione outros casos conforme necessário
+                default:
+                    return NotFound(); // Retorna um erro 404 se o número da página não for válido
             }
-            return View($"~/Views/Orcamento/Index{nextPage}.cshtml");
-
-            //switch (nextPage)
-            //{
-            //    case 1:
-            //        return View("~/Views/Orcamento/Index.cshtml");
-            //    case 2:
-            //        return View("~/Views/Orcamento/Index2.cshtml");
-            //    case 3:
-            //        return View("~/Views/Orcamento/Index3.cshtml");
-            //    case 4:
-            //        return View("~/Views/Orcamento/Index4.cshtml");
-            //    case 5:
-            //        return View("~/Views/Orcamento/Index5.cshtml");
-            //    // Adicione outros casos conforme necessário
-            //    default:
-            //        return NotFound(); // Retorna um erro 404 se o número da página não for válido
-            //}
         }
 
         /*

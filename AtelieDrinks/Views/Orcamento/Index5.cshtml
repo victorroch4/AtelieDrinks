@@ -10,30 +10,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <!-- CSS -->
-    <link href="@Url.Content("~/css/orcamento.css")" rel="stylesheet">
-    <!-- JS -->
-    <script src="@Url.Content("~/js/orcamento.js")" defer></script>
-
+    <link rel="stylesheet" href="/css/orcamento.css">
+    <script src="/js/orcamento.js"></script>
 
     <title>Orcamento 5</title>
 </head>
 <body>
     <div id="background-black" class="background-black" style="display:none">
-        <div class="card-modal">
-            <div class="card-modal2">
+        <div class="card-Modal-card">
+            <div class="card-Modal-card2">
 
-                <div class="modal">
+                <div class="Modal-card">
 
-                    <div class="modal-header">
+                    <div class="Modal-card-header">
 
                         <h4>DRINKS DISPONÍVEIS</h4>
-                        <span id="fechar-modal" class="fechar-modal">&times;</span>
+                        <span id="fechar-Modal-card" class="fechar-Modal-card">&times;</span>
 
                     </div>
 
-                    <div class="modal-content">
+                    <div class="Modal-card-content">
 
                         <!--Preciso de um search para filtrar a tabela-->
                         <!--Search precisa filtrar por categorias e nome-->
@@ -48,6 +44,7 @@
 
                         <!--Lógica: drinks podem ser organizados
                             através de ordem alfabética e preço/custo-->
+
                         <div class="drink-container">
 
                             <div class="content-checkbox">
@@ -257,19 +254,17 @@
 
                         </div> <!--fim drinkContainer-->
                         <!--Lógica: as checkboxes marcadas definiram quais
-                          itens serão adicionados ao clicar no botão no fim do modal-->
+                            itens serão adicionados ao clicar no botão no fim do Modal-card-->
                         <div class="centralizar">
                             <button class="button adicionar">Adicionar</button>
                         </div>
 
-                    </div> <!--fim MODAL-CONTENT-->
+                    </div> <!--fim Modal-card-CONTENT-->
 
-                </div> <!--fim MODAL-->
+                </div> <!--fim Modal-card-->
 
             </div>
         </div>
-
-
     </div>
     <!--hero-banner-->
     <div class="hero-banner">
@@ -315,81 +310,6 @@
                             </div>
                         </div> <!--Fim lista TRANSP. Carreto-->
 
-                        <div id="meuModal" class="modal" style="display:none;">
-                            <div class="modal-content">
-                                <h4>DRINKS DISPONÍVEIS</h4>
-                                <span class="fechar-modal">&times;</span>
-                            </div>
-                            <div class="modal-body">
-                                <div class="column-drinks">
-
-                                    <div class="drink-container">
-                                        <input type="checkbox" name="drink" id="drink1">
-                                        <label for="drink1"><img src="/images/coqueteis.jpg" alt="Drink 1" width="100px"></label>
-                                        <div class="drink-detalhes">
-                                            <p class="drink-nome">Drink1</p>
-                                            <p class="drink-custo">Custo</p>
-                                            <p class="drink-descricao">Descrição</p>
-                                        </div>
-                                    </div> <!--fim drinkContainer-->
-
-                                    <div class="drink-container">
-                                        <input type="checkbox" name="drink" id="drink1">
-                                        <label for="drink1"><img src="/images/coqueteis.jpg" alt="Drink 1" width="100px"></label>
-                                        <div class="drink-detalhes">
-                                            <p class="drink-nome">Drink1</p>
-                                            <p class="drink-custo">Custo</p>
-                                            <p class="drink-descricao">Descrição</p>
-                                        </div>
-                                    </div> <!--fim drinkContainer-->
-
-                                    <div class="drink-container">
-                                        <input type="checkbox" name="drink" id="drink1">
-                                        <label for="drink1"><img src="/images/coqueteis.jpg" alt="Drink 1" width="100px"></label>
-                                        <div class="drink-detalhes">
-                                            <p class="drink-nome">Drink1</p>
-                                            <p class="drink-custo">Custo</p>
-                                            <p class="drink-descricao">Descrição</p>
-                                        </div>
-                                    </div> <!--fim drinkContainer-->
-
-                                    <div class="drink-container">
-                                        <input type="checkbox" name="drink" id="drink1">
-                                        <label for="drink1"><img src="/images/coqueteis.jpg" alt="Drink 1" width="100px"></label>
-                                        <div class="drink-detalhes">
-                                            <p class="drink-nome">Drink1</p>
-                                            <p class="drink-custo">Custo</p>
-                                            <p class="drink-descricao">Descrição</p>
-                                        </div>
-                                    </div> <!--fim drinkContainer-->
-
-                                    <div class="drink-container">
-                                        <input type="checkbox" name="drink" id="drink1">
-                                        <label for="drink1"><img src="/images/coqueteis.jpg" alt="Drink 1" width="100px"></label>
-                                        <div class="drink-detalhes">
-                                            <p class="drink-nome">Drink1</p>
-                                            <p class="drink-custo">Custo</p>
-                                            <p class="drink-descricao">Descrição</p>
-                                        </div>
-                                    </div> <!--fim drinkContainer-->
-
-                                    <div class="drink-container">
-                                        <input type="checkbox" name="drink" id="drink1">
-                                        <label for="drink1"><img src="/images/coqueteis.jpg" alt="Drink 1" width="100px"></label>
-                                        <div class="drink-detalhes">
-                                            <p class="drink-nome">Drink1</p>
-                                            <p class="drink-custo">Custo</p>
-                                            <p class="drink-descricao">Descrição</p>
-                                        </div>
-                                    </div> <!--fim drinkContainer-->
-
-                                    <div class="button adicionar">
-                                        Adicionar <!--BOTÃO ADICIONAR-->
-                                    </div> <!--BOTÃO ADICIONAR-->
-                                </div>
-                            </div>
-                        </div> <!--fim modal-->
-
                     </div> <!--Fim row-inputs-->
                 </div> <!--Fim margin-box-->
 
@@ -400,8 +320,8 @@
             </div> <!--fim content box-->
 
             <div class="list-buttons">
-                <button class="button excluir">Voltar</button>
-                <button class="button continuar " onclick=" window.location='@Url.Action("Index", "Historico")' ">Finalizar</button>
+                <button class="button excluir" onclick="window.location='@Url.Action("Index", "Orcamento", new { numberPage = 4 })'">Voltar</button>
+                <button class="button continuar" onclick=" window.location='@Url.Action("Index", "Historico")' ">Finalizar</button>
             </div> <!--fim lista-buttons-->
 
         </div> <!--fim CONTENT-->

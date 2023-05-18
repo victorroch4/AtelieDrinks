@@ -9,6 +9,14 @@
 --escuro-software: #1e1e1e;
 }
 
+::-webkit-scrollbar {
+background-color: transparent; /* cor de fundo do scroll */
+}
+
+::-webkit-scrollbar-thumb {
+background-color: transparent; /* cor da borda do scroll */
+}
+
 * {
 /*fonts*/
 font-family: 'Inter';
@@ -257,18 +265,18 @@ z-index: 1;
 position: fixed;
 }
 
-.modal {
+.Modal-card {
 background-color: black;
 min-width: 600px;
 max-height: 500px;
 }
 
-.modal-content {
+.Modal-card-content {
 overflow-y: scroll;
 max-height: 400px; /* ajuste a altura máxima conforme necessário */
 }
 
-.modal-header {
+.Modal-card-header {
 display: flex;
 flex-direction: row;
 align-items: center;
@@ -286,7 +294,7 @@ overflow-y: scroll;
 margin: 0 20px 0 40px;
 }
 
-.fechar-modal {
+.fechar-Modal-card {
 font-size: 30px;
 cursor: pointer;
 }
@@ -323,8 +331,8 @@ align-items: center;
 flex-direction: row;
 margin: 15px auto;
 }
-/*Animação modal*/
-.card-modal {
+/*Animação Modal-card*/
+.card-Modal-card {
 background-image: linear-gradient(180deg, var(--escuro-software) 0%, var(--vermelho-software) 100%);
 transition: all .4s;
 position: fixed;
@@ -335,17 +343,17 @@ min-width: 500px;
 max-width: 800px;
 }
 
-.card-modal2 {
+.card-Modal-card2 {
 background-color: #1a1a1a;
 transition: all .1s;
 }
 
-.card-modal2:hover {
+.card-Modal-card2:hover {
 transform: scale(0.98);
 border-radius: 20px;
 }
 
-.card-modal:hover {
+.card-Modal-card:hover {
 box-shadow: 0px 0px 20px 1px var(--vermelho-software);
 }
 

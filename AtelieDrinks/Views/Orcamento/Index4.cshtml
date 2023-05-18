@@ -26,7 +26,7 @@
         <div class="content">
             <!--box-->
             <div class="content-box">
-                <div class="margin-box" style="margin: 180px 0 50px 0;">
+                <div class="margin-box" style="margin: 350px 0 50px 0;">
                     <h3>TAXA DE DESLOCAMENTO</h3>
                     <p style="margin-top:5px">Pedágios, carros, seguro de reserva, etc...</p>
 
@@ -157,7 +157,7 @@
             </div> <!--fim content box-->
 
             <div class="list-buttons">
-                <button class="button excluir">Voltar</button>
+                <button class="button excluir" onclick="window.location='@Url.Action("Index", "Orcamento", new { numberPage = 3 })'">Voltar</button>
                 <button class="button continuar" onclick="window.location='@Url.Action("Index", "Orcamento", new { numberPage = 5 })'">Continuar</button>
             </div> <!--fim lista-buttons-->
 
