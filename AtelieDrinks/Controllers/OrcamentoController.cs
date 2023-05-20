@@ -12,6 +12,39 @@ namespace AtelieDrinks.Controllers
 {
     public class OrcamentoController : Controller
     {
+        private readonly Contexto _context;
+
+        public OrcamentoController(Contexto context)
+        {
+            _context = context;
+        }
+
+        // GET: Historico
+        public async Task<IActionResult> Index()
+        {
+            return _context.Orcamento != null ?
+                        View(await _context.Orcamento.ToListAsync()) :
+                        Problem("Entity set 'Contexto.Orcamento'  is null.");
+        }
+
+        // GET: Historico/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _context.Orcamento == null)
+            {
+                return NotFound();
+            }
+
+            var Orcamento = await _context.Orcamento
+                .FirstOrDefaultAsync(m => m.id_orcamento == id);
+            if (Orcamento == null)
+            {
+                return NotFound();
+            }
+
+            return View(Orcamento);
+        }
+
         //private readonly Data.Contexto _context;
         [Route("Orcamento/{numberPage:int?}")]
         public ActionResult Index(int? numberPage)
@@ -33,6 +66,41 @@ namespace AtelieDrinks.Controllers
                     return NotFound(); // Retorna um erro 404 se o número da página não for válido
             }
         }
+
+         // GET: Orcamento/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Createnumero_pessoas([Bind("numero_pessoas")] Orcamento orcamento)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(orcamento);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(orcamento);
+        }
+        public async Task<IActionResult> Create_custosOp([Bind("custo_operacional")] Orcamento orcamento)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(orcamento);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(orcamento);
+        }
+
+
+        // POST: Orcamento/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
 
         /*
         public OrcamentoController(Data.Contexto context)

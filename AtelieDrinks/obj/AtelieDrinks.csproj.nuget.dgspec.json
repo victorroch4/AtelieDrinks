@@ -1,24 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leova\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {}
+<<<<<<< HEAD
+    "C:\\Users\\ppcon041\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leova\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {
+    "C:\\Users\\ppcon041\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leova\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
+        "projectUniqueName": "C:\\Users\\ppcon041\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
         "projectName": "AtelieDrinks",
-        "projectPath": "C:\\Users\\leova\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
-        "packagesPath": "C:\\Users\\leova\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leova\\source\\repos\\AtelieDrinks\\AtelieDrinks\\obj\\",
+        "projectPath": "C:\\Users\\ppcon041\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
+        "packagesPath": "C:\\Users\\ppcon041\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ppcon041\\source\\repos\\AtelieDrinks\\AtelieDrinks\\obj\\",
+=======
+    "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
+        "projectName": "AtelieDrinks",
+        "projectPath": "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
+        "packagesPath": "C:\\Users\\phfuj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\obj\\",
+>>>>>>> 2e7ffe503713458e2253eb479a95213cfab9fd3a
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\leova\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+          "C:\\Users\\ppcon041\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\phfuj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 2e7ffe503713458e2253eb479a95213cfab9fd3a
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +41,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -101,7 +115,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+>>>>>>> 2e7ffe503713458e2253eb479a95213cfab9fd3a
         }
       }
     }
