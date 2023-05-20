@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leova\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {}
+    "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leova\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {
+    "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leova\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
+        "projectUniqueName": "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
         "projectName": "AtelieDrinks",
-        "projectPath": "C:\\Users\\leova\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
-        "packagesPath": "C:\\Users\\leova\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leova\\source\\repos\\AtelieDrinks\\AtelieDrinks\\obj\\",
+        "projectPath": "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
+        "packagesPath": "C:\\Users\\phfuj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\leova\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\phfuj\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -101,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
