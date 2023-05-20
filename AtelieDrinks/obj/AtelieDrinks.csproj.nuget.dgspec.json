@@ -1,39 +1,24 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\ppcon041\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {}
+    "C:\\Users\\victo\\Documents\\UFU\\CONSELT\\Atelier Drinks\\AtelieDrinks\\AtelieDrinks.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ppcon041\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {
+    "C:\\Users\\victo\\Documents\\UFU\\CONSELT\\Atelier Drinks\\AtelieDrinks\\AtelieDrinks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ppcon041\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
+        "projectUniqueName": "C:\\Users\\victo\\Documents\\UFU\\CONSELT\\Atelier Drinks\\AtelieDrinks\\AtelieDrinks.csproj",
         "projectName": "AtelieDrinks",
-        "projectPath": "C:\\Users\\ppcon041\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
-        "packagesPath": "C:\\Users\\ppcon041\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ppcon041\\source\\repos\\AtelieDrinks\\AtelieDrinks\\obj\\",
-=======
-    "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
-        "projectName": "AtelieDrinks",
-        "projectPath": "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\AtelieDrinks.csproj",
-        "packagesPath": "C:\\Users\\phfuj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phfuj\\source\\repos\\AtelieDrinks\\AtelieDrinks\\obj\\",
->>>>>>> 2e7ffe503713458e2253eb479a95213cfab9fd3a
+        "projectPath": "C:\\Users\\victo\\Documents\\UFU\\CONSELT\\Atelier Drinks\\AtelieDrinks\\AtelieDrinks.csproj",
+        "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\victo\\Documents\\UFU\\CONSELT\\Atelier Drinks\\AtelieDrinks\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-<<<<<<< HEAD
-          "C:\\Users\\ppcon041\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-          "C:\\Users\\phfuj\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 2e7ffe503713458e2253eb479a95213cfab9fd3a
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -102,8 +87,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -115,11 +99,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
->>>>>>> 2e7ffe503713458e2253eb479a95213cfab9fd3a
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
